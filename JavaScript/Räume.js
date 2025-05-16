@@ -116,8 +116,8 @@ export const InformatikRaumConfig = createRoomConfig({
     },
     riddleName: "roboter",
     dialogText: "Willkommen im Informatik Raum 002! <br> Gehe nun zur Tafel, um das Rätsel zu starten.",
-    backgroundSrc: './img2/Räume/Informatik/InfoRaum1.png',
-    backgroundAfterSrc: './img2/Räume/Informatik/InfoRaum2.png',
+    backgroundSrc: './img2/Räume/Informatik/Inforaum1.png',
+    backgroundAfterSrc: './img2/Räume/Informatik/Inforaum2.png',
     foregroundSrc: './img2/Räume/Informatik/VGInfoRaum.png',
     targetLevel: 'flur0Danach'
 });
