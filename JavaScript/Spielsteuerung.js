@@ -405,8 +405,8 @@ class GameController {
         document.querySelector('#SchwierigkeitsGrad').style.display = 'none';
         document.querySelector('#Titel').style.display = 'none';
         document.querySelector('#Interface').style.display = 'block'
-       // this.levelManager.startLevel(startLevel, player); // Ebene starten
-        this.levelManager.startLevel('GeschichtsRaum' ,player)
+        this.levelManager.startLevel(startLevel, player); // Ebene starten
+        //this.levelManager.startLevel('GeschichtsRaum' ,player)
         console.log(`Spiel ist jetzt im Zustand: ${this.state}`);
     }
 
