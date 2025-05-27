@@ -1,0 +1,234 @@
+<html lang="de">
+<link href='stylesheet.css' rel='stylesheet'> <!-- Verknüpfung der Index Datei mit dem Stylesheet  -->
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"  > 
+    
+    <title>Arnoldispiel</title>
+    
+</head>
+<body>
+    <div id = "CanvasContainer" class = "Responsive">
+        
+        <div class = "Titel" id = "Titel" style = "display: none">
+                ArnoldiCode
+        </div>
+        <div class ="Transition", id = "overlappingDIV"></div>
+
+        <!-- Erstellen des Canvas  -->
+        <canvas id = "gameCanvas"></canvas>
+
+        <div id = "guide" class= "Anleitung" >
+
+        </div>
+
+       <div  id = "WartenID" class = "Warten" style = "display: none; z-index: 21000; color: white">
+            <div>Bitte warten!</div>
+        </div>
+        
+        
+        
+        <div class = "Auswahl" id = "AuswahlID" style = "display: none"> 
+            <div class = "ErklärBox" id = "ErklärBox" > Bitte wähle dein Gerät aus! </div>
+            
+            <div style = " width: 100%; height: 40%; display: flex; justify-content: center;" id="Geräte">
+                <div class = "Geräte">
+
+                    
+                    <button class = "GeräteButton" >Handy/Tablet</button>
+                    <button class = "GeräteButton" >PC</button>
+                    
+                    
+                </div>
+            </div>
+
+            <div style = " width: 100%; height: 40%; display: flex; justify-content: center;" >
+                <div class = "Geräte" style = "display: none"  id="SchwierigkeitsGrad">
+                    
+                    <button class = "GeräteButton">Leicht</button>
+                    <button class = "GeräteButton">Mittel</button>
+                    <button class = "GeräteButton">Schwer</button>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div class = "AnleitungButton" id = "Anleitung">
+
+                <button class = "WeiterButton">Weiter</button>
+
+        </div>
+
+        
+        <div id="movingInterface">
+            <div class = "movingInterface " id = "moving">
+
+                <div class = "movingUp" id = 'Up'>
+                    <button class = "movingUpButton">
+                        <span class = "Pfeil">&#8679;</span>
+                    </button>
+                </div>
+                
+                <div class = "movingRightLeft">
+                    
+                    <button id = 'Left' class = "movingRightLeftButton">
+                        <span class = "Pfeil">&#8678;</span>
+                        
+                    </button>
+                    <button  disabled id ="formatButton" class = "movingRightLeftButton">
+                        
+                    </button>
+                    <button id = 'Right' class = "movingRightLeftButton">
+                        <span class = "Pfeil">&#8680;</span>
+                        
+                    </button>
+                </div>
+
+                <div class = "movingDown" id = 'Down'>
+                    <button class="movingDownButton">
+                        <span class = "Pfeil">&#8681;</span>
+                        
+                        
+                    </button>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class = 'timer' id="IDtimer" >
+            <div class="Zeit" id = "TimerText">
+                00:00
+            </div>
+        </div>
+
+        <div class = "Hilfe" id= "HilfeContainer">
+            <button id = "HilfeButton" style = "height: 100%; width: 100%; border-radius: 100%; font-size: 1.5em;">
+                <!-- <span>&#8505;</span> -->
+                 ❓
+            </button>
+
+        </div>
+
+        
+           
+            <div class = "Interface" id = "Interface">
+                <div id="GuideBox" class = "Dialog">
+                    <div id="GuideText" class = "DialogText">asdadfasdf </div>
+                    <div class ="DialogButton">
+                    <button id="Weiter" style= "background-color: lightgrey">Fortfahren</button>
+                    </div>
+
+                </div>
+                
+                <div id="DialogBox" class = "Dialog">
+                    <div class = "DialogText">
+                        <div id="DialogText" >asdadfasdf </div>
+                    </div>
+                    <div class ="DialogButton">
+                    <button id="Fortfahren" class = "FortfahrenButton">Fortfahren</button>
+                    </div>
+
+                </div>
+
+                <div id="RewardBox" class = "Dialog" style= "display: none">
+                    <div class = "DialogText">
+                        <div id="RewardText" >asdadfasdf </div>
+                    </div>
+                    <div class ="DialogButton">
+                    <button id="RewardButton" class = "FortfahrenButton">Fortfahren</button>
+                    </div>
+
+                </div>
+                    <div id = 'Content' class="Content">
+                        <div class = "ErklärungAntworten"> Bitte wähle eine der vier Antworten aus!</div>
+                        <div class = "ErklärungHinweise"> Hinweise gefällig? </div> 
+                         
+                        <div class = "Answers" id = "Answers">
+                            
+                            <button class="AnswersButton" ></button>
+                            <button class = "AnswersButton"  ></button>
+                            <button class = "AnswersButton" ></button>
+                            <button class = "AnswersButton" ></button>
+                        </div>
+
+                        
+                        
+                        <div class = "Hinweise">
+                            
+                            <button disabled = 'true' id = "Hinweis1" class="HinweisCss">Hinweis1</button>
+                            <button disabled = 'true' id = "Hinweis2" class="HinweisCss">Hinweis2</button>
+                            <button disabled = 'true' id = "Hinweis3"class="HinweisCss">Lösung</button>
+                            <button  id = "Zurück" class="ZurückCss">Zurück</button>
+
+                        </div>
+                        
+                    </div>
+                
+            </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" 
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
+    <!-- Importieren der Arrays für die Zonen -->
+
+    <script src="data/audio.js"> </script> 
+
+    <script src="data/Transitions.js"> </script>
+
+    <script src="data/Ebene0.js"> </script>
+
+    <script src="data/Ebene1.js"> </script>
+
+    <script src="data/Ebene2.js"> </script>
+
+    <script src="data/Ebene3.js"> </script>
+
+    <script src="data/Ebene4.js"> </script>
+
+    <script src="data/Ebene5.js"> </script>
+
+    <!------------------------------------------------------------------------------------------------------------->
+
+    <!-- Importieren der Funktionen -->
+
+    
+    
+    <script src="pleaserotate.js"> </script> 
+    
+    <script src="JavaScript/classes.js"> </script> 
+
+     
+
+    <script src="JavaScript/Timer.js"> </script>
+
+    <script type= "module" src="JavaScript/Spielsteuerung.js"> </script>
+
+    <script type= "module" src="JavaScript/EbenenModul.js"> </script>
+
+    <script type = "module" src="JavaScript/RätselManager.js"> </script>
+
+    
+
+    <script src="JavaScript/Spieler.js"> </script>
+    
+
+    
+</body>
+
+</html>
+
